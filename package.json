@@ -1,8 +1,8 @@
 {
 	"name": "Chapbook",
-	"author": "Chris Klimas <chris@twinery.org>",
+	"author": "Chris Klimas <chris@twinery.org>, rhaport",
 	"description": "A Twine story format emphasizing ease of authoring, multimedia, and playability on many different types of devices. Visit the <a href=\"https://klembot.github.io/chapbook/guide/\">guide</a> for more information.",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"main": "index.js",
 	"license": "MIT",
 	"devDependencies": {
@@ -20,6 +20,7 @@
 		"eslint": "^4.14.0",
 		"eslint-config-prettier": "^6.11.0",
 		"gitbook-cli": "^2.3.2",
+		"graceful-fs": "^4.2.4",
 		"html-webpack-plugin": "^3.2.0",
 		"husky": "^4.2.5",
 		"jest": "^24.7.1",
@@ -72,7 +73,7 @@
 		"guide:release": "cd guide && gitbook build",
 		"lint": "eslint src/",
 		"prettier": "prettier --write \"src/**/*.{js,scss}\"",
-		"release": "run-s -l build examples guide:release website",
+		"release": "run-s -l build website",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:coverage": "jest --coverage",

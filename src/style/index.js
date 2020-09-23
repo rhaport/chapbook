@@ -25,7 +25,8 @@ export const defaults = {
 	'config.style.page.header.font': '16',
 	'config.style.page.header.link.font': 'small caps',
 	'config.style.page.footer.font': '16',
-	'config.style.page.footer.link.font': 'small caps'
+	'config.style.page.footer.link.font': 'small caps',
+	'config.style.modal.color': 'blue' 
 };
 
 const rules = {};

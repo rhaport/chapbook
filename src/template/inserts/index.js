@@ -12,6 +12,8 @@ import RestartLink from './restart-link';
 import RevealLink from './reveal-link';
 import SoundEffect from './sound-effect';
 import TextInput from './text-input';
+import Button from './button';
+import Answer from './answer';
 
 export default [
 	AmbientSound,
@@ -27,5 +29,7 @@ export default [
 	RestartLink,
 	RevealLink,
 	SoundEffect,
-	TextInput
+	TextInput,
+	Button,
+	Answer
 ];
