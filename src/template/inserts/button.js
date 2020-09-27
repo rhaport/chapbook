@@ -9,18 +9,19 @@ import htmlify from '../../util/htmlify';
 export default {
 	match: /^button?/i,
 	render(_, props) {
-		return htmlify('button', 
+		return htmlify('hint', 
 		{
-			type: 'button',
+			class: props.disabled ? "disabled" : undefined,
 			'data-cb-hint-trigger': "test",
-			'data-cb-hint-text': props.text || 'No hint'
+			'data-cb-hint-text': props.text || 'No hint',
+			'data-cb-is-disabled': props.disabled ? "true" : "false"
 		}, 
 		[props.caption]);
 	}
 };
 
 event.on('dom-click', el => {
-	if (el.dataset.cbHintTrigger) {
+	if (el.dataset.cbHintTrigger && el.dataset.cbIsDisabled == "false") {
 
 		// Get the modal
 		var modal = document.querySelector("#cb-modal");
@@ -29,11 +30,11 @@ event.on('dom-click', el => {
 		var hint = document.querySelector('#cb-modal-text');
 		hint.innerHTML = el.dataset.cbHintText;
 
-		// Get the <span> element that closes the modal
-		var span = document.querySelector("#cb-modal-close");
+		// Get the close button element that closes the modal
+		var closeBtn = document.querySelector("#cb-modal-close-button");
 	
 		// When the user clicks on <span> (x), close the modal
-		span.onclick = function() {
+		closeBtn.onclick = function() {
 			modal.style.display = "none";
 		}
 	

@@ -2,6 +2,11 @@
 @import '../layout';
 @import '../typography';
 
+@font-face {
+	font-family: 'VillaLettera Bold';
+	src: url("http://swisscityquest.ch/fonts/VillaLettera_Bold.woff2");
+ }
+
 #backdrop {
 	min-height: 100vh;
 	display: flex;
@@ -145,7 +150,6 @@
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
 	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 	.cb-modal-content {
@@ -155,18 +159,44 @@
 		border: 1px solid #888;
 		width: $pageWidth * 8 / 10; /* Could be more or less, depending on screen size */
 
-		/* The Close Button */
-		#cb-modal-close {
-			color: #aaa;
-			float: right;
-			font-size: 28px;
-			font-weight: bold;
+		.cb-modal-text {
+			color: #000;
+			font-size: 16px;
+			font-family: "Franklin Gothic", "Verdana", "Dejavu Sans Mono";
+			line-height	: 150%;
 		}
 
-		#cb-modal-text {
-			color: #000;
+		h4 {
+			border-bottom: 1px solid #ccc;
+			padding: 1rem;
+			margin: 0;
 		}
-	}
+
+		.cb-modal-actions {
+			/* The Close Button */
+			margin-top: 1em;
+			padding-bottom: 0.5em;
+			text-align: center;
+
+			.cb-modal-close-button {
+				display: inline-block;
+				padding: 0.5em 1em;
+				text-decoration: none;
+				background: #d75457;
+				border: solid 1px #dc262a;
+				color: whitesmoke;
+				font-weight: bold;
+				margin: 0em 0.5em 0em 0em;
+				cursor: pointer;
+				box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.29);
+			}
+				
+			.cb-modal-close-button:active {
+				box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.1);
+				transform: translateY(5	px);
+			}
+		}
+	}	
 }
 
 @media screen and (max-width: 768px) {

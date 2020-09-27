@@ -9,9 +9,8 @@ import htmlify from '../../util/htmlify';
 export default {
 	match: /^answer(\s+for)/i,
 	render(varName, props) {
-		return htmlify('button', 
+		return htmlify('hint', 
 		{
-			type: 'button',
 			'data-cb-answer-for': varName,
 			'data-cb-answer-text': props.text
 		}, 
